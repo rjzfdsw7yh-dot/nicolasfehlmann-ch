@@ -84,10 +84,16 @@
   .btn-ghost{border:1.5px solid rgba(238,246,245,0.35);color:var(--foam);}
   .btn-ghost:hover{border-color:var(--foam);transform:translateY(-2px);}
   .hero-photo{
-    position:relative;z-index:2;margin:0;overflow:hidden;
-    border-left:1px solid rgba(238,246,245,0.1);
+    position:relative;z-index:2;margin:24px 24px 24px 0;overflow:hidden;
+    border-radius:16px;
   }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;}
+  .hero-slider{position:relative;width:100%;height:100%;}
+  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.9s ease;}
+  .hero-slide.active{opacity:1;}
+  .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;}
+  .slider-dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:4;}
+  .slider-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.35);border:none;cursor:pointer;padding:0;transition:background 0.3s;}
+  .slider-dot.active{background:rgba(255,255,255,0.9);}
   .hero-stats{
     position:absolute;bottom:58px;left:56px;right:56px;display:flex;gap:40px;z-index:3;
     border-top:1px solid rgba(238,246,245,0.15);padding-top:22px;flex-wrap:wrap;
@@ -168,12 +174,12 @@
   .news{background:var(--foam);}
   .news-list{display:flex;flex-direction:column;}
   .news-item{
-    display:grid;grid-template-columns:200px 140px 1fr;gap:32px;align-items:center;
+    display:grid;grid-template-columns:360px 140px 1fr;gap:32px;align-items:center;
     padding:28px 0;border-top:1px solid rgba(6,34,43,0.12);
   }
   .news-list .news-item:last-child{border-bottom:1px solid rgba(6,34,43,0.12);}
   .news-thumb{
-    aspect-ratio:16/10;border-radius:4px;overflow:hidden;
+    aspect-ratio:3/2;border-radius:6px;overflow:hidden;
   }
   .news-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .news-date{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--swiss-red);}
@@ -331,7 +337,22 @@
       <a href="#contact" class="btn btn-ghost">Kontakt aufnehmen</a>
     </div>
   </div>
-  <div class="hero-photo"><img src="images/hero.jpg" alt="Im Wettkampf am Slalomtor"></div>
+  <div class="hero-photo">
+    <div class="hero-slider">
+      <div class="hero-slide active"><img src="images/hero.jpg" alt="Im Wettkampf am Slalomtor"></div>
+      <div class="hero-slide"><img src="images/587D73A3-9078-4EA5-A1DF-60CFA0C8C88B_1_105_c.jpeg" alt="Weltcup Prag" style="object-position:65% 40%;"></div>
+      <div class="hero-slide"><img src="images/DSC08862.JPG" alt="Im Wettkampf"></div>
+      <div class="hero-slide"><img src="images/kx.jpg" alt="Kajak-Cross"></div>
+      <div class="hero-slide"><img src="images/9B8C3187-0C83-4B3B-8EB6-1B200B74DC7B_1_102_o.jpeg" alt="Im Wettkampf"></div>
+    </div>
+    <div class="slider-dots">
+      <button class="slider-dot active" data-idx="0"></button>
+      <button class="slider-dot" data-idx="1"></button>
+      <button class="slider-dot" data-idx="2"></button>
+      <button class="slider-dot" data-idx="3"></button>
+      <button class="slider-dot" data-idx="4"></button>
+    </div>
+  </div>
   <div class="hero-stats">
     <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>97</div><div class="stat-label">Weltrangliste K1</div></div>
     <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>22</div><div class="stat-label">Weltrangliste Kajak-Cross</div></div>
@@ -548,5 +569,25 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots = document.querySelectorAll('.slider-dot');
+  var current = 0;
+  function go(n){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ go(+this.dataset.idx); });
+  });
+  document.querySelector('.hero-slider').addEventListener('click', function(){ go(current + 1); });
+  document.querySelector('.hero-slider').style.cursor = 'pointer';
+  setInterval(function(){ go(current + 1); }, 5000);
+})();
+</script>
 </body>
 </html>
