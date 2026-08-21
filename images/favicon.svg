@@ -1,16 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <clipPath id="c"><rect width="64" height="64" rx="10"/></clipPath>
-  </defs>
-  <rect width="64" height="64" rx="10" fill="#06222B"/>
-  <!-- Water area + wave -->
-  <g clip-path="url(#c)">
-    <path d="M-4,52 C4,46 12,58 20,52 C28,46 36,58 44,52 C52,46 60,58 68,52 L68,68 L-4,68 Z" fill="#0E3A47"/>
-    <path d="M-4,52 C4,46 12,58 20,52 C28,46 36,58 44,52 C52,46 60,58 68,52" stroke="rgba(238,246,245,0.45)" stroke-width="1.5" fill="none"/>
-    <path d="M-4,56 C4,50 12,62 20,56 C28,50 36,62 44,56 C52,50 60,62 68,56 L68,68 L-4,68 Z" fill="rgba(213,43,30,0.35)"/>
+  <defs><clipPath id="c"><rect width="64" height="64" rx="10"/></clipPath></defs>
+  <rect width="64" height="64" rx="10" fill="#EEF6F5"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="7.5" fill="none" stroke="#06222B" stroke-width="2.5"/>
+  <g fill="#06222B" clip-path="url(#c)">
+    <!-- N bars: straight edges, rounded corners via rect -->
+    <rect x="7"  y="10" width="7" height="34" rx="2.5"/>
+    <rect x="27" y="10" width="6" height="34" rx="2.5"/>
+    <!-- N diagonal: only the two exposed corners rounded -->
+    <path d="M11,10 L17,10 Q20,10 20.5,12.5 L29,41.5 Q30,44 27,44 L23,44 Q21,44 20.5,41.5 L12,12 Z"/>
+    <!-- F bars -->
+    <rect x="37" y="10" width="6"  height="34" rx="2.5"/>
+    <rect x="37" y="10" width="20" height="7"  rx="2.5"/>
+    <rect x="37" y="27" width="17" height="6"  rx="2.5"/>
+    <!-- Wave -->
+    <path d="M-2,44 C7,35 16,53 25,44 C34,35 43,53 52,44 C61,35 70,53 79,44 L79,68 L-2,68 Z"/>
   </g>
-  <!-- N: single path, no rendering gaps -->
-  <path fill="#EEF6F5" d="M2,7 L9,7 L9,49 L2,49 Z M9,7 L16,7 L23,49 L16,49 Z M23,7 L30,7 L30,49 L23,49 Z"/>
-  <!-- F: single path -->
-  <path fill="#D52B1E" d="M34,7 L41,7 L41,49 L34,49 Z M34,7 L58,7 L58,14 L34,14 Z M34,27 L52,27 L52,33 L34,33 Z"/>
 </svg>
