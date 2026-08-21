@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#06222B"/>
+  <!-- N in foam white -->
+  <g fill="#EEF6F5">
+    <rect x="2" y="8" width="7" height="48"/>
+    <polygon points="9,8 16,8 23,56 16,56"/>
+    <rect x="23" y="8" width="7" height="48"/>
+  </g>
+  <!-- F in Swiss red -->
+  <g fill="#D52B1E">
+    <rect x="34" y="8" width="7" height="48"/>
+    <rect x="34" y="8" width="24" height="7"/>
+    <rect x="34" y="28" width="18" height="6"/>
+  </g>
+</svg>
