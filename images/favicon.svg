@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="c"><rect width="64" height="64" rx="10"/></clipPath>
+  </defs>
   <rect width="64" height="64" rx="10" fill="#06222B"/>
-  <!-- N in foam white -->
-  <g fill="#EEF6F5">
-    <rect x="2" y="8" width="7" height="48"/>
-    <polygon points="9,8 16,8 23,56 16,56"/>
-    <rect x="23" y="8" width="7" height="48"/>
+  <!-- Water area + wave -->
+  <g clip-path="url(#c)">
+    <path d="M-4,52 C4,46 12,58 20,52 C28,46 36,58 44,52 C52,46 60,58 68,52 L68,68 L-4,68 Z" fill="#0E3A47"/>
+    <path d="M-4,52 C4,46 12,58 20,52 C28,46 36,58 44,52 C52,46 60,58 68,52" stroke="rgba(238,246,245,0.45)" stroke-width="1.5" fill="none"/>
+    <path d="M-4,56 C4,50 12,62 20,56 C28,50 36,62 44,56 C52,50 60,62 68,56 L68,68 L-4,68 Z" fill="rgba(213,43,30,0.35)"/>
   </g>
-  <!-- F in Swiss red -->
-  <g fill="#D52B1E">
-    <rect x="34" y="8" width="7" height="48"/>
-    <rect x="34" y="8" width="24" height="7"/>
-    <rect x="34" y="28" width="18" height="6"/>
-  </g>
+  <!-- N: single path, no rendering gaps -->
+  <path fill="#EEF6F5" d="M2,7 L9,7 L9,49 L2,49 Z M9,7 L16,7 L23,49 L16,49 Z M23,7 L30,7 L30,49 L23,49 Z"/>
+  <!-- F: single path -->
+  <path fill="#D52B1E" d="M34,7 L41,7 L41,49 L34,49 Z M34,7 L58,7 L58,14 L34,14 Z M34,27 L52,27 L52,33 L34,33 Z"/>
 </svg>
