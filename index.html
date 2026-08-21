@@ -71,7 +71,7 @@
     font-family:var(--display);font-weight:800;color:var(--foam);
     font-size:clamp(46px,6.5vw,96px);line-height:0.95;letter-spacing:-0.01em;margin-bottom:28px;
   }
-  h1.hero-title .accent{color:var(--swiss-red);}
+  h1.hero-title .accent{color:var(--foam);}
   .hero-sub{font-size:clamp(17px,1.6vw,21px);color:var(--foam2);max-width:520px;font-weight:400;margin-bottom:44px;}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
   .btn{
@@ -283,6 +283,60 @@
     padding:24px 48px;
     display:flex;justify-content:space-between;align-items:center;
   }
+  .modal-overlay{
+    display:none;position:fixed;inset:0;z-index:1000;
+    background:rgba(6,34,43,0.75);backdrop-filter:blur(4px);
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:#fff;border-radius:12px;padding:48px;
+    max-width:480px;width:100%;position:relative;
+    box-shadow:0 24px 64px rgba(0,0,0,0.3);
+  }
+  .modal-close{
+    position:absolute;top:16px;right:20px;background:none;border:none;
+    font-size:24px;cursor:pointer;color:var(--rock-soft);line-height:1;
+  }
+  .modal-close:hover{color:var(--deep);}
+  .modal-tier{
+    display:inline-block;font-family:var(--display);font-size:12px;
+    font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--swiss-red);margin-bottom:12px;
+  }
+  .modal-box h3{
+    font-family:var(--display);font-weight:800;font-size:24px;
+    color:var(--deep);margin-bottom:8px;
+  }
+  .modal-box p{font-size:15px;color:var(--rock-soft);margin-bottom:28px;}
+  .modal-field{margin-bottom:20px;}
+  .modal-field label{
+    display:block;font-family:var(--display);font-size:12px;
+    font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--deep);margin-bottom:8px;
+  }
+  .modal-field input,.modal-field textarea{
+    width:100%;padding:12px 16px;border:1.5px solid rgba(6,34,43,0.2);
+    border-radius:4px;font-family:var(--body);font-size:15px;
+    color:var(--deep);background:#fff;transition:border-color .2s;
+  }
+  .modal-field input:focus,.modal-field textarea:focus{
+    outline:none;border-color:var(--swiss-red);
+  }
+  .modal-field textarea{resize:vertical;min-height:90px;}
+  .modal-submit{
+    width:100%;padding:16px;background:var(--swiss-red);color:#fff;
+    border:none;border-radius:4px;font-family:var(--display);
+    font-weight:700;font-size:14px;letter-spacing:0.04em;
+    text-transform:uppercase;cursor:pointer;transition:background .2s;
+  }
+  .modal-submit:hover{background:#e8392c;}
+  .modal-success{display:none;text-align:center;padding:16px 0;}
+  .modal-success-icon{font-size:40px;margin-bottom:16px;}
+  .modal-success h3{font-family:var(--display);font-size:22px;color:var(--deep);margin-bottom:8px;}
+  .modal-success p{color:var(--rock-soft);font-size:15px;}
+  @media(max-width:600px){.modal-box{padding:32px 24px;}}
+
   @media (max-width:860px){
     .footer-sponsors{padding:24px;gap:20px;}
     .footer-logos{gap:20px;}
@@ -567,6 +621,38 @@
   </div>
 </footer>
 
+<div class="modal-overlay" id="gonnerModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div id="modalForm">
+      <span class="modal-tier" id="modalTier">Aufwärtstor</span>
+      <h3>Team Fehlmann beitreten</h3>
+      <p>Füll das Formular aus — ich melde mich danach persönlich bei dir.</p>
+      <form action="https://formspree.io/f/xaewvaad" method="POST">
+        <input type="hidden" name="Mitgliedschaft" id="formTier" value="">
+        <div class="modal-field">
+          <label for="fieldName">Name</label>
+          <input type="text" id="fieldName" name="Name" placeholder="Vor- und Nachname" required>
+        </div>
+        <div class="modal-field">
+          <label for="fieldEmail">E-Mail</label>
+          <input type="email" id="fieldEmail" name="E-Mail" placeholder="deine@email.ch" required>
+        </div>
+        <div class="modal-field">
+          <label for="fieldMsg">Nachricht (optional)</label>
+          <textarea id="fieldMsg" name="Nachricht" placeholder="Fragen oder Anmerkungen…"></textarea>
+        </div>
+        <button type="submit" class="modal-submit">Anmeldung absenden</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">✓</div>
+      <h3>Danke für deine Anmeldung!</h3>
+      <p>Ich freue mich und melde mich bald persönlich bei dir.</p>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   var slides = document.querySelectorAll('.hero-slide');
@@ -585,6 +671,38 @@
   document.querySelector('.hero-slider').addEventListener('click', function(){ go(current + 1); });
   document.querySelector('.hero-slider').style.cursor = 'pointer';
   setInterval(function(){ go(current + 1); }, 5000);
+
+  // Gönner-Modal
+  var modal = document.getElementById('gonnerModal');
+  var modalTier = document.getElementById('modalTier');
+  var formTier = document.getElementById('formTier');
+  var tierLabels = {starttor:'Starttor',aufwärtstor:'Aufwärtstor',wendetor:'Aufwärtstor',zieltor:'Zieltor'};
+  document.querySelectorAll('[data-tier]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = this.dataset.tier;
+      var label = tierLabels[t] || t;
+      modalTier.textContent = label;
+      formTier.value = label;
+      document.getElementById('modalForm').style.display = '';
+      document.getElementById('modalSuccess').style.display = 'none';
+      modal.classList.add('open');
+    });
+  });
+  document.getElementById('modalClose').addEventListener('click', function(){ modal.classList.remove('open'); });
+  modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('open'); });
+  var gonnerForm = modal.querySelector('form');
+  gonnerForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(gonnerForm);
+    fetch(gonnerForm.action, {method:'POST', body:data, headers:{Accept:'application/json'}})
+      .then(function(r){
+        if(r.ok){
+          document.getElementById('modalForm').style.display = 'none';
+          document.getElementById('modalSuccess').style.display = 'block';
+        }
+      });
+  });
 })();
 </script>
 </body>
