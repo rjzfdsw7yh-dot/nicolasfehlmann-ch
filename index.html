@@ -188,7 +188,8 @@
 
   .team-fehlmann{background:var(--foam);}
   .team-intro{font-size:18px;color:var(--rock-soft);max-width:70ch;margin-bottom:56px;}
-  .team-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start;}
+  .team-grid{display:flex;justify-content:center;}
+  .team-grid .team-card{max-width:480px;width:100%;}
   .team-card{
     background:#fff;border-radius:6px;padding:36px;
     display:flex;flex-direction:column;gap:24px;
@@ -504,42 +505,22 @@
     <div class="team-grid">
 
       <div class="team-card">
-        <div class="team-card-name">Starttor</div>
+        <div class="team-card-name">Mitgliedschaft Team Fehlmann</div>
         <div class="team-card-input-wrap">
           <div class="team-card-input-row">
             <span class="team-card-currency">CHF</span>
-            <input type="number" min="50" step="10" placeholder="50" class="team-card-input">
+            <input type="number" min="80" step="10" placeholder="80" class="team-card-input">
             <span class="team-card-period">/ Saison</span>
           </div>
-          <div class="team-card-hint">frei wählbar</div>
+          <div class="team-card-hint">ab CHF 80 · frei wählbar</div>
         </div>
         <ul class="team-card-features">
           <li>Namentliche Erwähnung auf der Webseite</li>
           <li>Saison-Newsletter (2–3× pro Jahr)</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-tier="starttor">Jetzt unterstützen</a>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-name">Aufwärtstor</div>
-        <div class="team-card-amount">CHF 100 <span class="team-card-period">/ Saison</span></div>
-        <ul class="team-card-features">
-          <li>Alles aus «Starttor»</li>
           <li>Einladung zum Saison-Apéro</li>
-          <li>Apéro-Einladung inkl. Begleitung (+1 Person)</li>
+          <li>Teil der Gemeinschaft rund um Team Fehlmann</li>
         </ul>
-        <a href="#" class="btn btn-primary" data-tier="wendetor">Jetzt unterstützen</a>
-      </div>
-
-      <div class="team-card">
-        <div class="team-card-name">Zieltor</div>
-        <div class="team-card-amount">CHF 200 <span class="team-card-period">/ Saison</span></div>
-        <ul class="team-card-features">
-          <li>Alles aus «Aufwärtstor»</li>
-          <li>Persönliches Gespräch / kleinere Apéro-Runde</li>
-          <li>Nennung als Hauptgönner</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-tier="zieltor">Jetzt unterstützen</a>
+        <a href="#" class="btn btn-primary" data-tier="Mitgliedschaft Team Fehlmann">Jetzt Mitglied werden</a>
       </div>
 
     </div>
