@@ -709,8 +709,10 @@
       e.preventDefault();
       var t = this.dataset.tier;
       var label = tierLabels[t] || t;
-      modalTier.textContent = label;
-      formTier.value = label;
+      var amountInput = this.closest('.team-card') && this.closest('.team-card').querySelector('.team-card-input');
+      var amount = amountInput && amountInput.value ? 'CHF ' + amountInput.value : '';
+      modalTier.textContent = label + (amount ? ' · ' + amount : '');
+      formTier.value = label + (amount ? ' · ' + amount : '');
       document.getElementById('modalForm').style.display = '';
       document.getElementById('modalSuccess').style.display = 'none';
       modal.classList.add('open');
