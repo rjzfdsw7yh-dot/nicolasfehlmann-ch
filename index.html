@@ -188,8 +188,15 @@
 
   .team-fehlmann{background:var(--foam);}
   .team-intro{font-size:18px;color:var(--rock-soft);max-width:70ch;margin-bottom:56px;}
-  .team-grid{display:flex;justify-content:center;}
-  .team-grid .team-card{max-width:480px;width:100%;}
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;max-width:900px;}
+  .gonner-tafel{background:#fff;border-radius:6px;padding:36px;}
+  .gonner-tafel-title{font-family:var(--display);font-weight:800;font-size:18px;color:var(--deep);margin-bottom:6px;}
+  .gonner-tafel-sub{font-size:13px;color:var(--rock-soft);margin-bottom:28px;}
+  .gonner-tafel-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+  .gonner-tafel-list li{font-family:var(--display);font-weight:700;font-size:15px;color:var(--deep);display:flex;align-items:center;gap:10px;}
+  .gonner-tafel-list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--swiss-red);flex-shrink:0;}
+  .gonner-tafel-placeholder{font-size:14px;color:rgba(6,34,43,0.35);font-style:italic;border-top:1px dashed rgba(6,34,43,0.15);padding-top:20px;}
+  @media(max-width:860px){.team-grid{grid-template-columns:1fr;}}
   .team-card{
     background:#fff;border-radius:6px;padding:36px;
     display:flex;flex-direction:column;gap:24px;
@@ -521,6 +528,15 @@
           <li>Teil der Gemeinschaft rund um Team Fehlmann</li>
         </ul>
         <a href="#" class="btn btn-primary" data-tier="Mitgliedschaft Team Fehlmann">Jetzt Mitglied werden</a>
+      </div>
+
+      <div class="gonner-tafel">
+        <div class="gonner-tafel-title">Gönnertafel</div>
+        <div class="gonner-tafel-sub">Diese Menschen unterstützen meinen Weg.</div>
+        <ul class="gonner-tafel-list">
+          <!-- Gönner-Namen hier eintragen -->
+        </ul>
+        <div class="gonner-tafel-placeholder">Hier könntest du stehen.</div>
       </div>
 
     </div>
