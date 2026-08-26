@@ -216,7 +216,15 @@
     font-size:14px;color:rgba(238,246,245,0.35);font-style:italic;
     padding-top:16px;text-align:center;letter-spacing:0.02em;
   }
+  .event-banner{background:linear-gradient(135deg,var(--swiss-red) 0%,#a81e15 100%);border-radius:6px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:32px;}
+  .event-banner-info{flex:1;}
+  .event-banner-label{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px;font-family:var(--display);}
+  .event-banner-title{font-family:var(--display);font-size:22px;font-weight:800;color:#fff;margin-bottom:4px;}
+  .event-banner-meta{font-size:14px;color:rgba(255,255,255,0.8);}
+  .btn-white{background:#fff;color:var(--swiss-red);white-space:nowrap;}
+  .btn-white:hover{background:rgba(255,255,255,0.92);transform:translateY(-2px);}
   @media(max-width:860px){.team-grid{grid-template-columns:1fr;}}
+  @media(max-width:600px){.event-banner{flex-direction:column;align-items:flex-start;}}
   .team-card{
     background:#fff;border-radius:6px;padding:36px;
     display:flex;flex-direction:column;gap:24px;
@@ -529,6 +537,15 @@
       <div><h2>Team Fehlmann</h2><div class="gate-sub">Downstream Gate · Gönnerclub</div></div>
     </div>
     <p class="team-intro">Als Teil von Team Fehlmann unterstützt du mich bei Trainings, Material und Wettkampfreisen – und wirst Teil einer Gemeinschaft, die meine Reise Richtung Olympia hautnah miterlebt. Beim Saison-Apéro triffst du die anderen Köpfe hinter Team Fehlmann – und bist von da an nicht mehr nur Zuschauer, sondern mittendrin.</p>
+    <div class="event-banner">
+      <div class="event-banner-info">
+        <div class="event-banner-label">Kickoff Event · Team Fehlmann</div>
+        <div class="event-banner-title">Gönnerclub-Apéro</div>
+        <div class="event-banner-meta">Datum &amp; Ort folgen</div>
+      </div>
+      <a href="#" class="btn btn-white" id="eventAnmelden">Jetzt anmelden</a>
+    </div>
+
     <div class="team-grid">
 
       <div class="team-card">
@@ -681,6 +698,33 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="eventModal">
+  <div class="modal-box">
+    <button class="modal-close" id="eventModalClose">&times;</button>
+    <div id="eventModalForm">
+      <span class="modal-tier">Kickoff · Team Fehlmann</span>
+      <h3>Anmeldung Gönnerclub-Apéro</h3>
+      <p>Meld dich kurz an — ich freue mich auf euch!</p>
+      <form action="https://formspree.io/f/xnpaeejo" method="POST">
+        <div class="modal-field">
+          <label for="evName">Name</label>
+          <input type="text" id="evName" name="Name" placeholder="Vor- und Nachname" required>
+        </div>
+        <div class="modal-field">
+          <label for="evPersons">Anzahl Personen</label>
+          <input type="number" id="evPersons" name="Anzahl_Personen" min="1" placeholder="1" required>
+        </div>
+        <button type="submit" class="modal-submit">Anmelden</button>
+      </form>
+    </div>
+    <div class="modal-success" id="eventModalSuccess">
+      <div class="modal-success-icon">✓</div>
+      <h3>Anmeldung erhalten!</h3>
+      <p>Danke — bis bald am Apéro!</p>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   var slides = document.querySelectorAll('.hero-slide');
@@ -730,6 +774,28 @@
         if(r.ok){
           document.getElementById('modalForm').style.display = 'none';
           document.getElementById('modalSuccess').style.display = 'block';
+        }
+      });
+  });
+  // Event-Modal
+  var eventModal = document.getElementById('eventModal');
+  document.getElementById('eventAnmelden').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('eventModalForm').style.display = '';
+    document.getElementById('eventModalSuccess').style.display = 'none';
+    eventModal.classList.add('open');
+  });
+  document.getElementById('eventModalClose').addEventListener('click', function(){ eventModal.classList.remove('open'); });
+  eventModal.addEventListener('click', function(e){ if(e.target === eventModal) eventModal.classList.remove('open'); });
+  var eventForm = eventModal.querySelector('form');
+  eventForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(eventForm);
+    fetch(eventForm.action, {method:'POST', body:data, headers:{Accept:'application/json'}})
+      .then(function(r){
+        if(r.ok){
+          document.getElementById('eventModalForm').style.display = 'none';
+          document.getElementById('eventModalSuccess').style.display = 'block';
         }
       });
   });
