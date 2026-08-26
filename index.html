@@ -39,6 +39,7 @@
     border-bottom:1px solid rgba(6,34,43,0.08);
   }
   .logo{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:0.02em;color:var(--deep);}
+  nav{display:flex;align-items:center;gap:8px;}
   nav ul{list-style:none;display:flex;gap:8px;}
   nav a{
     font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:0.06em;
@@ -47,6 +48,13 @@
   }
   nav a .gatenum{color:var(--swiss-red);margin-right:6px;font-weight:800;}
   nav a:hover{color:var(--swiss-red);}
+  .lang-toggle{
+    font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:0.08em;
+    background:transparent;border:1.5px solid rgba(6,34,43,0.2);color:var(--deep);
+    padding:7px 14px;border-radius:3px;cursor:pointer;transition:all 0.2s;
+    text-transform:uppercase;margin-left:8px;
+  }
+  .lang-toggle:hover{border-color:var(--deep);background:rgba(6,34,43,0.06);}
 
   .hero{
     position:relative;min-height:100vh;display:grid;
@@ -135,9 +143,7 @@
 
   .about{background:var(--foam);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch;}
-  .about-photo{
-    border-radius:6px;min-height:520px;overflow:hidden;
-  }
+  .about-photo{border-radius:6px;min-height:520px;overflow:hidden;}
   .about-photo img{width:100%;height:100%;min-height:520px;object-fit:cover;object-position:center;display:block;}
   .about-text{display:flex;flex-direction:column;justify-content:center;}
   .about-text p{font-size:18px;color:var(--rock-soft);margin-bottom:20px;max-width:54ch;}
@@ -160,9 +166,7 @@
   .results-table td.result{font-weight:500;}
   .results-table td.event{color:rgba(238,246,245,0.65);text-align:right;}
   .results-table tr:hover{background:rgba(238,246,245,0.04);}
-  .ach-photo{
-    border:1px solid rgba(238,246,245,0.12);border-radius:6px;min-height:420px;overflow:hidden;
-  }
+  .ach-photo{border:1px solid rgba(238,246,245,0.12);border-radius:6px;min-height:420px;overflow:hidden;}
   .ach-photo img{width:100%;height:100%;min-height:420px;object-fit:cover;object-position:center;display:block;}
   .ach-timeline{display:flex;align-items:center;padding:4px 0;}
   .ach-timeline-line{flex:1;height:1px;background:rgba(238,246,245,0.15);}
@@ -179,9 +183,7 @@
     padding:28px 0;border-top:1px solid rgba(6,34,43,0.12);
   }
   .news-list .news-item:last-child{border-bottom:1px solid rgba(6,34,43,0.12);}
-  .news-thumb{
-    aspect-ratio:3/2;border-radius:6px;overflow:hidden;
-  }
+  .news-thumb{aspect-ratio:3/2;border-radius:6px;overflow:hidden;}
   .news-thumb img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
   .news-date{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--swiss-red);}
   .news-item h3{font-family:var(--display);font-weight:700;font-size:20px;color:var(--deep);margin-bottom:8px;}
@@ -279,16 +281,10 @@
   .contact-photo{border-radius:6px;overflow:hidden;min-height:420px;}
   .contact-photo img{width:100%;height:100%;min-height:420px;object-fit:cover;object-position:center;display:block;}
 
-  .feature-band{
-    position:relative;height:78vh;min-height:520px;overflow:hidden;padding:0;
-  }
+  .feature-band{position:relative;height:78vh;min-height:520px;overflow:hidden;padding:0;}
   .feature-band img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block;}
-  .feature-band .feature-quote{
-    position:absolute;left:48px;bottom:48px;right:48px;z-index:2;max-width:680px;
-  }
-  .feature-band .feature-quote .fq-mark{
-    display:inline-block;width:40px;height:3px;background:var(--swiss-red);margin-bottom:20px;
-  }
+  .feature-band .feature-quote{position:absolute;left:48px;bottom:48px;right:48px;z-index:2;max-width:680px;}
+  .feature-band .feature-quote .fq-mark{display:inline-block;width:40px;height:3px;background:var(--swiss-red);margin-bottom:20px;}
   .feature-band .feature-quote p{
     font-family:var(--display);font-weight:700;color:var(--foam);
     font-size:clamp(22px,3vw,38px);line-height:1.15;
@@ -310,15 +306,9 @@
   .footer-logos{display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
   .footer-logo-img{height:36px;width:auto;object-fit:contain;opacity:0.75;transition:opacity .2s;}
   .footer-logo-img:hover{opacity:1;}
-  .footer-logo-chip{
-    background:#ffffff;border-radius:4px;padding:6px 12px;
-    display:flex;align-items:center;
-  }
+  .footer-logo-chip{background:#ffffff;border-radius:4px;padding:6px 12px;display:flex;align-items:center;}
   .footer-logo-chip .footer-logo-img{opacity:1;filter:none;height:26px;}
-  .footer-bottom{
-    padding:24px 48px;
-    display:flex;justify-content:space-between;align-items:center;
-  }
+  .footer-bottom{padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
   .modal-overlay{
     display:none;position:fixed;inset:0;z-index:1000;
     background:rgba(6,34,43,0.75);backdrop-filter:blur(4px);
@@ -340,10 +330,7 @@
     font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
     color:var(--swiss-red);margin-bottom:12px;
   }
-  .modal-box h3{
-    font-family:var(--display);font-weight:800;font-size:24px;
-    color:var(--deep);margin-bottom:8px;
-  }
+  .modal-box h3{font-family:var(--display);font-weight:800;font-size:24px;color:var(--deep);margin-bottom:8px;}
   .modal-box p{font-size:15px;color:var(--rock-soft);margin-bottom:28px;}
   .modal-field{margin-bottom:20px;}
   .modal-field label{
@@ -356,9 +343,7 @@
     border-radius:4px;font-family:var(--body);font-size:15px;
     color:var(--deep);background:#fff;transition:border-color .2s;
   }
-  .modal-field input:focus,.modal-field textarea:focus{
-    outline:none;border-color:var(--swiss-red);
-  }
+  .modal-field input:focus,.modal-field textarea:focus{outline:none;border-color:var(--swiss-red);}
   .modal-field textarea{resize:vertical;min-height:90px;}
   .modal-submit{
     width:100%;padding:16px;background:var(--swiss-red);color:#fff;
@@ -379,10 +364,9 @@
     .footer-logo-img{height:28px;}
     .footer-bottom{padding:20px 24px;flex-direction:column;gap:8px;text-align:center;}
   }
-
   @media (max-width:860px){
     header{padding:18px 24px;}
-    nav{display:none;}
+    nav ul{display:none;}
     .hero{grid-template-columns:1fr;}
     .hero-inner{padding:120px 24px 0;}
     .hero-photo{min-height:300px;}
@@ -408,23 +392,24 @@
   <div class="logo">NICOLAS&nbsp;FEHLMANN</div>
   <nav>
     <ul>
-      <li><a href="#about"><span class="gatenum">01</span>Über mich</a></li>
-      <li><a href="#achievements"><span class="gatenum">02</span>Erfolge</a></li>
+      <li><a href="#about"><span class="gatenum">01</span><span data-i18n="nav.about">Über mich</span></a></li>
+      <li><a href="#achievements"><span class="gatenum">02</span><span data-i18n="nav.results">Erfolge</span></a></li>
       <li><a href="#team-fehlmann"><span class="gatenum">03</span>Team Fehlmann</a></li>
       <li><a href="#news"><span class="gatenum">04</span>News</a></li>
-      <li><a href="#contact"><span class="gatenum">05</span>Kontakt</a></li>
+      <li><a href="#contact"><span class="gatenum">05</span><span data-i18n="nav.contact">Kontakt</span></a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle">EN</button>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Kanuslalom · Schweiz</div>
+    <div class="eyebrow" data-i18n="hero.eyebrow">Kanuslalom · Schweiz</div>
     <h1 class="hero-title">Nicolas<br>Fehl<span class="accent">mann</span></h1>
-    <p class="hero-sub">Kanuslalom-Athlet aus Solothurn im Schweizer Nationalteam. Kajak und Kajak-Cross — auf dem Weg zu den nächsten internationalen Erfolgen.</p>
+    <p class="hero-sub" data-i18n="hero.sub">Kanuslalom-Athlet aus Solothurn im Schweizer Nationalteam. Kajak und Kajak-Cross — auf dem Weg zu den nächsten internationalen Erfolgen.</p>
     <div class="hero-cta">
-      <a href="#achievements" class="btn btn-primary">Erfolge ansehen</a>
-      <a href="#contact" class="btn btn-ghost">Kontakt aufnehmen</a>
+      <a href="#achievements" class="btn btn-primary" data-i18n="hero.cta.primary">Erfolge ansehen</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta.ghost">Kontakt aufnehmen</a>
     </div>
   </div>
   <div class="hero-photo">
@@ -444,30 +429,30 @@
     </div>
   </div>
   <div class="hero-stats">
-    <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>97</div><div class="stat-label">Weltrangliste K1</div></div>
-    <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>22</div><div class="stat-label">Weltrangliste Kajak-Cross</div></div>
-    <div><div class="stat-num">4</div><div class="stat-label">Weltcup-Starts</div></div>
-    <div><div class="stat-num">2019</div><div class="stat-label">Im Kader seit</div></div>
+    <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>97</div><div class="stat-label" data-i18n="hero.stat.k1">Weltrangliste K1</div></div>
+    <div class="stat-rank"><div class="stat-num"><span class="rank-hash">#</span>22</div><div class="stat-label" data-i18n="hero.stat.kx">Weltrangliste Kajak-Cross</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label" data-i18n="hero.stat.wc">Weltcup-Starts</div></div>
+    <div><div class="stat-num">2019</div><div class="stat-label" data-i18n="hero.stat.since">Im Kader seit</div></div>
   </div>
-  <div class="hero-stand">Weltranglisten-Stand: Juni&nbsp;2026 · ICF</div>
+  <div class="hero-stand" data-i18n="hero.stand">Weltranglisten-Stand: Juni&nbsp;2026 · ICF</div>
 </section>
 
 <section class="about" id="about">
   <div class="section-inner">
     <div class="gate-label">
       <div class="gate-marker up">01</div>
-      <div><h2>Über mich</h2><div class="gate-sub">Downstream Gate · Biografie</div></div>
+      <div><h2 data-i18n="about.h2">Über mich</h2><div class="gate-sub" data-i18n="about.sub">Downstream Gate · Biografie</div></div>
     </div>
     <div class="about-grid">
       <div class="about-photo"><img src="images/portrait.jpg" alt="Porträt im Swiss-Canoe-Dress"></div>
       <div class="about-text">
-        <p>Ich bin Nicolas Fehlmann (Jahrgang 2005), Kanuslalom-Athlet aus Solothurn und Teil des Schweizer Nationalteams. Den Weg ins Boot fand ich über einen Schnupperkurs im Verein – und schon nach den ersten Fahrten liess mich das Wildwasser nicht mehr los. Seit 2019 gehöre ich dem nationalen Kader an und trainiere heute in Basel.</p>
-        <p>Was mich am Kanuslalom fasziniert, ist das Zusammenspiel mit dem Wasser – nicht gegen die Strömung anzukämpfen, sondern mit ihr zu arbeiten und in jeder Welle die schnellste Linie zu finden. Dazu kommt die Vielseitigkeit der Sportart: vom technisch-präzisen Kajak-Einer (K1) bis zum packenden Kopf-an-Kopf des Kajak-Cross. Mein langfristiges Ziel habe ich klar vor Augen – die Olympischen Spiele.</p>
+        <p data-i18n="about.p1">Ich bin Nicolas Fehlmann (Jahrgang 2005), Kanuslalom-Athlet aus Solothurn und Teil des Schweizer Nationalteams. Den Weg ins Boot fand ich über einen Schnupperkurs im Verein – und schon nach den ersten Fahrten liess mich das Wildwasser nicht mehr los. Seit 2019 gehöre ich dem nationalen Kader an und trainiere heute in Basel.</p>
+        <p data-i18n="about.p2">Was mich am Kanuslalom fasziniert, ist das Zusammenspiel mit dem Wasser – nicht gegen die Strömung anzukämpfen, sondern mit ihr zu arbeiten und in jeder Welle die schnellste Linie zu finden. Dazu kommt die Vielseitigkeit der Sportart: vom technisch-präzisen Kajak-Einer (K1) bis zum packenden Kopf-an-Kopf des Kajak-Cross. Mein langfristiges Ziel habe ich klar vor Augen – die Olympischen Spiele.</p>
         <div class="about-facts">
-          <div><div class="fact-label">Herkunft</div><div class="fact-value">Solothurn</div></div>
-          <div><div class="fact-label">Disziplinen</div><div class="fact-value">K1 &amp; Kajak-Cross</div></div>
-          <div><div class="fact-label">Trainingsort</div><div class="fact-value">Basel</div></div>
-          <div><div class="fact-label">Jahrgang</div><div class="fact-value">2005</div></div>
+          <div><div class="fact-label" data-i18n="fact.origin">Herkunft</div><div class="fact-value">Solothurn</div></div>
+          <div><div class="fact-label" data-i18n="fact.disciplines">Disziplinen</div><div class="fact-value" data-i18n="fact.disc.val">K1 &amp; Kajak-Cross</div></div>
+          <div><div class="fact-label" data-i18n="fact.training">Trainingsort</div><div class="fact-value">Basel</div></div>
+          <div><div class="fact-label" data-i18n="fact.born">Jahrgang</div><div class="fact-value">2005</div></div>
         </div>
       </div>
     </div>
@@ -486,26 +471,26 @@
   <div class="section-inner">
     <div class="gate-label">
       <div class="gate-marker down">02</div>
-      <div><h2>Erfolge</h2><div class="gate-sub">Upstream Gate · Resultate</div></div>
+      <div><h2 data-i18n="ach.h2">Erfolge</h2><div class="gate-sub" data-i18n="ach.sub">Upstream Gate · Resultate</div></div>
     </div>
     <div class="ach-grid">
       <table class="results-table">
-        <tr><td class="year">2026</td><td class="result">3. Platz</td><td class="event">World-Ranking-Race, Prag · Slalom</td></tr>
-        <tr><td class="year"></td><td class="result">2. Platz</td><td class="event">World-Ranking-Race, Prag · Cross</td></tr>
-        <tr><td class="year"></td><td class="result">Vizeschweizermeister</td><td class="event">Schweizermeisterschaft · K1</td></tr>
-        <tr><td class="year"></td><td class="result">8. Platz</td><td class="event">U23-WM · Kajak-Cross</td></tr>
-        <tr><td class="year"></td><td class="result">Qualifikation Eliteteam</td><td class="event">Kajak-Cross</td></tr>
-        <tr><td class="year"></td><td class="result">1. Platz</td><td class="event">World-Ranking-Race, Krakau · Cross</td></tr>
-        <tr><td class="year"></td><td class="result">3. Platz</td><td class="event">World-Ranking-Race, Ivrea · Cross</td></tr>
-        <tr><td class="year"></td><td class="result">3. Platz</td><td class="event">World-Ranking-Race, Hüningen · Cross</td></tr>
-        <tr><td class="year"></td><td class="result">21. &amp; 22. Platz</td><td class="event">Weltcup #1 &amp; #2 · Cross</td></tr>
-        <tr><td class="year">2025</td><td class="result">1. Platz</td><td class="event">ECA Cup, Solkan · K1</td></tr>
-        <tr><td class="year"></td><td class="result">19. Platz</td><td class="event">U23-WM · K1</td></tr>
-        <tr><td class="year">2024</td><td class="result">15. Platz</td><td class="event">Erste U23-EM · Kajak-Cross</td></tr>
-        <tr><td class="year"></td><td class="result">5. Platz</td><td class="event">Schweizermeisterschaft · K1</td></tr>
-        <tr><td class="year">2023</td><td class="result">Halbfinal-Quali</td><td class="event">Erste Weltcup-Teilnahme · K1</td></tr>
-        <tr><td class="year">2022</td><td class="result">Europameister</td><td class="event">Team Abfahrt · Junioren-EM</td></tr>
-        <tr><td class="year">2021</td><td class="result">Erste Junioren-WM-Teilnahme</td><td class="event">Junioren-WM · K1</td></tr>
+        <tr><td class="year">2026</td><td class="result" data-i18n="r.3rd">3. Platz</td><td class="event">World-Ranking-Race, Prag · Slalom</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.2nd">2. Platz</td><td class="event">World-Ranking-Race, Prag · Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.vize">Vizeschweizermeister</td><td class="event" data-i18n="e.swissm">Schweizermeisterschaft · K1</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.8th">8. Platz</td><td class="event" data-i18n="e.u23wmkx">U23-WM · Kajak-Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.elitesel">Qualifikation Eliteteam</td><td class="event" data-i18n="e.kxsel">Kajak-Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.1st">1. Platz</td><td class="event">World-Ranking-Race, Krakau · Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.3rd">3. Platz</td><td class="event">World-Ranking-Race, Ivrea · Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.3rd">3. Platz</td><td class="event">World-Ranking-Race, Hüningen · Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.2122">21. &amp; 22. Platz</td><td class="event" data-i18n="e.wc12">Weltcup #1 &amp; #2 · Cross</td></tr>
+        <tr><td class="year">2025</td><td class="result" data-i18n="r.1st">1. Platz</td><td class="event">ECA Cup, Solkan · K1</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.19th">19. Platz</td><td class="event" data-i18n="e.u23wmk1">U23-WM · K1</td></tr>
+        <tr><td class="year">2024</td><td class="result" data-i18n="r.15th">15. Platz</td><td class="event" data-i18n="e.u23emkx">Erste U23-EM · Kajak-Cross</td></tr>
+        <tr><td class="year"></td><td class="result" data-i18n="r.5th">5. Platz</td><td class="event" data-i18n="e.swissmk1">Schweizermeisterschaft · K1</td></tr>
+        <tr><td class="year">2023</td><td class="result" data-i18n="r.hfquali">Halbfinal-Quali</td><td class="event" data-i18n="e.firstwc">Erste Weltcup-Teilnahme · K1</td></tr>
+        <tr><td class="year">2022</td><td class="result" data-i18n="r.eurom">Europameister</td><td class="event" data-i18n="e.teamrun">Team Abfahrt · Junioren-EM</td></tr>
+        <tr><td class="year">2021</td><td class="result" data-i18n="r.firstjwm">Erste Junioren-WM-Teilnahme</td><td class="event" data-i18n="e.jwmk1">Junioren-WM · K1</td></tr>
       </table>
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div class="ach-photo"><img src="images/news2.jpg" alt="Im Wettkampf"></div>
@@ -534,48 +519,48 @@
   <div class="section-inner">
     <div class="gate-label">
       <div class="gate-marker up">03</div>
-      <div><h2>Team Fehlmann</h2><div class="gate-sub">Downstream Gate · Gönnerclub</div></div>
+      <div><h2 data-i18n="team.h2">Team Fehlmann</h2><div class="gate-sub" data-i18n="team.sub">Downstream Gate · Gönnerclub</div></div>
     </div>
-    <p class="team-intro">Als Teil von Team Fehlmann unterstützt du mich bei Trainings, Material und Wettkampfreisen – und wirst Teil einer Gemeinschaft, die meine Reise Richtung Olympia hautnah miterlebt. Beim Saison-Apéro triffst du die anderen Köpfe hinter Team Fehlmann – und bist von da an nicht mehr nur Zuschauer, sondern mittendrin.</p>
+    <p class="team-intro" data-i18n="team.intro">Als Teil von Team Fehlmann unterstützt du mich bei Trainings, Material und Wettkampfreisen – und wirst Teil einer Gemeinschaft, die meine Reise Richtung Olympia hautnah miterlebt. Beim Saison-Apéro triffst du die anderen Köpfe hinter Team Fehlmann – und bist von da an nicht mehr nur Zuschauer, sondern mittendrin.</p>
     <div class="event-banner">
       <div class="event-banner-info">
-        <div class="event-banner-label">Kickoff Event · Team Fehlmann</div>
-        <div class="event-banner-title">Gönnerclub-Apéro</div>
-        <div class="event-banner-meta">14. Oktober · Bootshaus Solothurner Kajakfahrer</div>
+        <div class="event-banner-label" data-i18n="event.label">Kickoff Event · Team Fehlmann</div>
+        <div class="event-banner-title" data-i18n="event.title">Gönnerclub-Apéro</div>
+        <div class="event-banner-meta" data-i18n="event.meta">14. Oktober · Bootshaus Solothurner Kajakfahrer</div>
       </div>
-      <a href="#" class="btn btn-white" id="eventAnmelden">Jetzt anmelden</a>
+      <a href="#" class="btn btn-white" id="eventAnmelden" data-i18n="event.btn">Jetzt anmelden</a>
     </div>
 
     <div class="team-grid">
 
       <div class="team-card">
-        <div class="team-card-name">Mitgliedschaft Team Fehlmann</div>
+        <div class="team-card-name" data-i18n="card.name">Mitgliedschaft Team Fehlmann</div>
         <div class="team-card-input-wrap">
           <div class="team-card-input-row">
             <span class="team-card-currency">CHF</span>
             <input type="number" min="80" step="10" placeholder="80" class="team-card-input">
-            <span class="team-card-period">/ Saison</span>
+            <span class="team-card-period" data-i18n="card.period">/ Saison</span>
           </div>
-          <div class="team-card-hint">ab CHF 80 · frei wählbar</div>
+          <div class="team-card-hint" data-i18n="card.hint">ab CHF 80 · frei wählbar</div>
         </div>
         <ul class="team-card-features">
-          <li>Einladung zum Saison-Apéro</li>
-          <li>Live-Infos vom Renngeschehen</li>
-          <li>Namentliche Erwähnung auf der Webseite</li>
-          <li>Teil der Gemeinschaft rund um Team Fehlmann</li>
+          <li data-i18n="card.f1">Einladung zum Saison-Apéro</li>
+          <li data-i18n="card.f2">Live-Infos vom Renngeschehen</li>
+          <li data-i18n="card.f3">Namentliche Erwähnung auf der Webseite</li>
+          <li data-i18n="card.f4">Teil der Gemeinschaft rund um Team Fehlmann</li>
         </ul>
-        <a href="#" class="btn btn-primary" data-tier="Mitgliedschaft Team Fehlmann">Jetzt Mitglied werden</a>
+        <a href="#" class="btn btn-primary" data-tier="Mitgliedschaft Team Fehlmann" data-i18n="card.btn">Jetzt Mitglied werden</a>
       </div>
 
       <div class="gonner-tafel">
         <div class="gonner-tafel-inner">
           <div class="gonner-tafel-eyebrow">Team Fehlmann</div>
-          <div class="gonner-tafel-title">Gönnertafel</div>
+          <div class="gonner-tafel-title" data-i18n="tafel.title">Gönnertafel</div>
           <ul class="gonner-tafel-list">
             <!-- Gönner-Namen hier eintragen, z.B.: -->
             <!-- <li>Max Mustermann</li> -->
           </ul>
-          <div class="gonner-tafel-placeholder">Hier könntest du stehen.</div>
+          <div class="gonner-tafel-placeholder" data-i18n="tafel.placeholder">Hier könntest du stehen.</div>
         </div>
       </div>
 
@@ -587,31 +572,31 @@
   <div class="section-inner">
     <div class="gate-label">
       <div class="gate-marker up">04</div>
-      <div><h2>News</h2><div class="gate-sub">Downstream Gate · Aktuelles</div></div>
+      <div><h2 data-i18n="news.h2">News</h2><div class="gate-sub" data-i18n="news.sub">Downstream Gate · Aktuelles</div></div>
     </div>
     <div class="news-list">
       <div class="news-item">
         <div class="news-thumb"><img src="images/D2BF5A85-0A94-43D7-A072-F0BE3198BEC0_1_102_o.jpeg" alt="Podest World Ranking Race Prag"></div>
-        <div class="news-date">August 2026</div>
+        <div class="news-date" data-i18n="news.date1">August 2026</div>
         <div class="news-body">
-          <h3>Doppelpodest am World Ranking Race Prag</h3>
-          <p>Vom 14. bis 16. August ging in Prag-Troja der ICF Canoe Slalom World Ranking Race über die Bühne. Zwei Starts, zwei Podestplätze: Im Slalom erkämpfte ich mir den 3. Platz, im Kajak-Cross legte ich noch einen drauf und holte Rang 2. Ein starkes Wochenende auf einem der schnellsten Kanäle Europas — und ein optimaler Abschluss vor dem letzten Rennen der Saison: der Europameisterschaft Ende September in Ivrea.</p>
+          <h3 data-i18n="news.title1">Doppelpodest am World Ranking Race Prag</h3>
+          <p data-i18n="news.text1">Vom 14. bis 16. August ging in Prag-Troja der ICF Canoe Slalom World Ranking Race über die Bühne. Zwei Starts, zwei Podestplätze: Im Slalom erkämpfte ich mir den 3. Platz, im Kajak-Cross legte ich noch einen drauf und holte Rang 2. Ein starkes Wochenende auf einem der schnellsten Kanäle Europas — und ein optimaler Abschluss vor dem letzten Rennen der Saison: der Europameisterschaft Ende September in Ivrea.</p>
         </div>
       </div>
       <div class="news-item">
         <div class="news-thumb"><img src="images/2C91FF68-56D8-4596-98DB-1FE75B53C875_1_105_c.jpeg" alt="Nicolas Fehlmann an der U23-WM in Krakau"></div>
-        <div class="news-date">Juli 2026</div>
+        <div class="news-date" data-i18n="news.date2">Juli 2026</div>
         <div class="news-body">
-          <h3>8. Platz an der U23-WM in Krakau</h3>
-          <p>Vom 30. Juni bis 5. Juli fanden in Krakau die ICF Junior &amp; U23 Kanuslalom-Weltmeisterschaften statt — 445 Athleten aus 51 Nationen. Im K1 lief es nicht nach Plan — ein schwaches Rennen, das nicht meinem Niveau entsprach. Im Kajak-Cross kämpfte ich mich durch die K.o.-Runden bis in den Halbfinal und belegte am Ende den 8. Platz — ein gutes Resultat auf internationalem Niveau. Die Vorbereitung und der Fokus liegen jetzt auf der U23-EM in Epinal anfangs August.</p>
+          <h3 data-i18n="news.title2">8. Platz an der U23-WM in Krakau</h3>
+          <p data-i18n="news.text2">Vom 30. Juni bis 5. Juli fanden in Krakau die ICF Junior &amp; U23 Kanuslalom-Weltmeisterschaften statt — 445 Athleten aus 51 Nationen. Im K1 lief es nicht nach Plan — ein schwaches Rennen, das nicht meinem Niveau entsprach. Im Kajak-Cross kämpfte ich mich durch die K.o.-Runden bis in den Halbfinal und belegte am Ende den 8. Platz — ein gutes Resultat auf internationalem Niveau. Die Vorbereitung und der Fokus liegen jetzt auf der U23-EM in Epinal anfangs August.</p>
         </div>
       </div>
       <div class="news-item">
         <div class="news-thumb"><img src="images/587D73A3-9078-4EA5-A1DF-60CFA0C8C88B_1_105_c.jpeg" alt="Weltcup Prag" style="object-position:65% center;"></div>
-        <div class="news-date">Juni 2026</div>
+        <div class="news-date" data-i18n="news.date3">Juni 2026</div>
         <div class="news-body">
-          <h3>Drei Weltcups — Tacen, Prag, Augsburg</h3>
-          <p>Mit drei Weltcups in drei Wochen startete die Saison intensiv. In Tacen und Prag war ich im Kajak-Cross am Start und belegte den 21. und 22. Platz — solide Ergebnisse in einem starken internationalen Feld. In Augsburg stand nur K1 auf dem Programm: ein guter Lauf, der aber durch eine knappe 50-Sekunden-Strafe teuer bezahlt wurde und an einem deutlich besseren Resultat vorbeischrammte. Trotzdem wichtige Wettkampfkilometer gesammelt vor der U23-WM in Krakau.</p>
+          <h3 data-i18n="news.title3">Drei Weltcups — Tacen, Prag, Augsburg</h3>
+          <p data-i18n="news.text3">Mit drei Weltcups in drei Wochen startete die Saison intensiv. In Tacen und Prag war ich im Kajak-Cross am Start und belegte den 21. und 22. Platz — solide Ergebnisse in einem starken internationalen Feld. In Augsburg stand nur K1 auf dem Programm: ein guter Lauf, der aber durch eine knappe 50-Sekunden-Strafe teuer bezahlt wurde und an einem deutlich besseren Resultat vorbeischrammte. Trotzdem wichtige Wettkampfkilometer gesammelt vor der U23-WM in Krakau.</p>
         </div>
       </div>
     </div>
@@ -622,11 +607,11 @@
   <div class="section-inner">
     <div class="gate-label">
       <div class="gate-marker down">05</div>
-      <div><h2>Kontakt</h2><div class="gate-sub">Finish Gate · Anfragen</div></div>
+      <div><h2 data-i18n="contact.h2">Kontakt</h2><div class="gate-sub" data-i18n="contact.sub">Finish Gate · Anfragen</div></div>
     </div>
     <div class="contact-grid">
       <div class="contact-text">
-        <p>Für Medienanfragen, Sponsoring-Kooperationen oder sonstige Anliegen — meldet euch gerne direkt.</p>
+        <p data-i18n="contact.text">Für Medienanfragen, Sponsoring-Kooperationen oder sonstige Anliegen — meldet euch gerne direkt.</p>
         <div class="contact-links">
           <a href="mailto:nimafeh@gmail.com">E-Mail <span>&rarr;</span></a>
           <a href="https://www.instagram.com/nicolasfehlmann?igsh=MXIwdTJ0MjhuNXhlMw%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram <span>&rarr;</span></a>
@@ -641,7 +626,7 @@
 
 <footer>
   <div class="footer-sponsors">
-    <div class="footer-sponsors-label">Unterstützt von</div>
+    <div class="footer-sponsors-label" data-i18n="footer.supported">Unterstützt von</div>
     <div class="footer-logos">
       <img class="footer-logo-img" src="images/Sporthilfe_Logo_DE_CMYK_neg.png" alt="Swiss Olympic Sporthilfe">
       <img class="footer-logo-img" src="images/83_066_Logo_Spitzensport_breit_neg_d.png" alt="Spitzensport">
@@ -654,7 +639,7 @@
   </div>
   <div class="footer-bottom">
     <div>&copy; 2026 Nicolas Fehlmann</div>
-    <div>Kanuslalom · Schweiz</div>
+    <div data-i18n="footer.sport">Kanuslalom · Schweiz</div>
   </div>
 </footer>
 
@@ -663,37 +648,37 @@
     <button class="modal-close" id="modalClose">&times;</button>
     <div id="modalForm">
       <span class="modal-tier" id="modalTier">Aufwärtstor</span>
-      <h3>Team Fehlmann beitreten</h3>
-      <p>Füll das Formular aus — ich melde mich danach persönlich bei dir.</p>
+      <h3 data-i18n="modal.h3">Team Fehlmann beitreten</h3>
+      <p data-i18n="modal.p">Füll das Formular aus — ich melde mich danach persönlich bei dir.</p>
       <form action="https://formspree.io/f/xaewvaad" method="POST">
         <input type="hidden" name="Mitgliedschaft" id="formTier" value="">
         <div class="modal-field">
-          <label for="fieldName">Name</label>
-          <input type="text" id="fieldName" name="Name" placeholder="Vor- und Nachname" required>
+          <label for="fieldName" data-i18n="modal.name.label">Name</label>
+          <input type="text" id="fieldName" name="Name" data-i18n-ph="modal.name.ph" placeholder="Vor- und Nachname" required>
         </div>
         <div class="modal-field">
-          <label for="fieldEmail">E-Mail</label>
-          <input type="email" id="fieldEmail" name="E-Mail" placeholder="deine@email.ch" required>
+          <label for="fieldEmail" data-i18n="modal.email.label">E-Mail</label>
+          <input type="email" id="fieldEmail" name="E-Mail" data-i18n-ph="modal.email.ph" placeholder="deine@email.ch" required>
         </div>
         <div class="modal-field">
-          <label for="fieldAddress">Adresse</label>
-          <textarea id="fieldAddress" name="Adresse" placeholder="Strasse, PLZ Ort" style="min-height:70px;" required></textarea>
+          <label for="fieldAddress" data-i18n="modal.addr.label">Adresse</label>
+          <textarea id="fieldAddress" name="Adresse" data-i18n-ph="modal.addr.ph" placeholder="Strasse, PLZ Ort" style="min-height:70px;" required></textarea>
         </div>
         <div class="modal-field">
-          <label for="fieldMsg">Nachricht (optional)</label>
-          <textarea id="fieldMsg" name="Nachricht" placeholder="Fragen oder Anmerkungen…"></textarea>
+          <label for="fieldMsg" data-i18n="modal.msg.label">Nachricht (optional)</label>
+          <textarea id="fieldMsg" name="Nachricht" data-i18n-ph="modal.msg.ph" placeholder="Fragen oder Anmerkungen…"></textarea>
         </div>
         <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;">
           <input type="checkbox" id="fieldAnonym" name="Anonym" value="Ja" style="margin-top:3px;accent-color:var(--swiss-red);width:16px;height:16px;flex-shrink:0;">
-          <label for="fieldAnonym" style="font-family:var(--body);font-size:14px;color:var(--rock-soft);text-transform:none;letter-spacing:0;cursor:pointer;">Ich möchte nicht namentlich auf der Gönnertafel erwähnt werden.</label>
+          <label for="fieldAnonym" data-i18n="modal.anonym" style="font-family:var(--body);font-size:14px;color:var(--rock-soft);text-transform:none;letter-spacing:0;cursor:pointer;">Ich möchte nicht namentlich auf der Gönnertafel erwähnt werden.</label>
         </div>
-        <button type="submit" class="modal-submit">Anmeldung absenden</button>
+        <button type="submit" class="modal-submit" data-i18n="modal.submit">Anmeldung absenden</button>
       </form>
     </div>
     <div class="modal-success" id="modalSuccess">
       <div class="modal-success-icon">✓</div>
-      <h3>Danke für deine Anmeldung!</h3>
-      <p>Ich freue mich und melde mich bald persönlich bei dir.</p>
+      <h3 data-i18n="modal.success.h3">Danke für deine Anmeldung!</h3>
+      <p data-i18n="modal.success.p">Ich freue mich und melde mich bald persönlich bei dir.</p>
     </div>
   </div>
 </div>
@@ -702,31 +687,192 @@
   <div class="modal-box">
     <button class="modal-close" id="eventModalClose">&times;</button>
     <div id="eventModalForm">
-      <span class="modal-tier">Kickoff · Team Fehlmann</span>
-      <h3>Anmeldung Gönnerclub-Apéro</h3>
-      <p>Meld dich kurz an — ich freue mich auf euch!</p>
+      <span class="modal-tier" data-i18n="ev.modal.tier">Kickoff · Team Fehlmann</span>
+      <h3 data-i18n="ev.modal.h3">Anmeldung Gönnerclub-Apéro</h3>
+      <p data-i18n="ev.modal.p">Meld dich kurz an — ich freue mich auf euch!</p>
       <form action="https://formspree.io/f/xnpaeejo" method="POST">
         <div class="modal-field">
-          <label for="evName">Name</label>
-          <input type="text" id="evName" name="Name" placeholder="Vor- und Nachname" required>
+          <label for="evName" data-i18n="modal.name.label">Name</label>
+          <input type="text" id="evName" name="Name" data-i18n-ph="modal.name.ph" placeholder="Vor- und Nachname" required>
         </div>
         <div class="modal-field">
-          <label for="evPersons">Anzahl Personen</label>
+          <label for="evPersons" data-i18n="ev.modal.persons.label">Anzahl Personen</label>
           <input type="number" id="evPersons" name="Anzahl_Personen" min="1" placeholder="1" required>
         </div>
-        <button type="submit" class="modal-submit">Anmelden</button>
+        <button type="submit" class="modal-submit" data-i18n="ev.modal.submit">Anmelden</button>
       </form>
     </div>
     <div class="modal-success" id="eventModalSuccess">
       <div class="modal-success-icon">✓</div>
-      <h3>Anmeldung erhalten!</h3>
-      <p>Danke — bis bald am Apéro!</p>
+      <h3 data-i18n="ev.modal.success.h3">Anmeldung erhalten!</h3>
+      <p data-i18n="ev.modal.success.p">Danke — bis bald am Apéro!</p>
     </div>
   </div>
 </div>
 
 <script>
 (function(){
+  // ── Translation dictionary ──────────────────────────────────────────────
+  var T = {
+    de: {
+      'nav.about':'Über mich','nav.results':'Erfolge','nav.contact':'Kontakt',
+      'hero.eyebrow':'Kanuslalom · Schweiz',
+      'hero.sub':'Kanuslalom-Athlet aus Solothurn im Schweizer Nationalteam. Kajak und Kajak-Cross — auf dem Weg zu den nächsten internationalen Erfolgen.',
+      'hero.cta.primary':'Erfolge ansehen','hero.cta.ghost':'Kontakt aufnehmen',
+      'hero.stat.k1':'Weltrangliste K1','hero.stat.kx':'Weltrangliste Kajak-Cross',
+      'hero.stat.wc':'Weltcup-Starts','hero.stat.since':'Im Kader seit',
+      'hero.stand':'Weltranglisten-Stand: Juni 2026 · ICF',
+      'about.h2':'Über mich','about.sub':'Downstream Gate · Biografie',
+      'about.p1':'Ich bin Nicolas Fehlmann (Jahrgang 2005), Kanuslalom-Athlet aus Solothurn und Teil des Schweizer Nationalteams. Den Weg ins Boot fand ich über einen Schnupperkurs im Verein – und schon nach den ersten Fahrten liess mich das Wildwasser nicht mehr los. Seit 2019 gehöre ich dem nationalen Kader an und trainiere heute in Basel.',
+      'about.p2':'Was mich am Kanuslalom fasziniert, ist das Zusammenspiel mit dem Wasser – nicht gegen die Strömung anzukämpfen, sondern mit ihr zu arbeiten und in jeder Welle die schnellste Linie zu finden. Dazu kommt die Vielseitigkeit der Sportart: vom technisch-präzisen Kajak-Einer (K1) bis zum packenden Kopf-an-Kopf des Kajak-Cross. Mein langfristiges Ziel habe ich klar vor Augen – die Olympischen Spiele.',
+      'fact.origin':'Herkunft','fact.disciplines':'Disziplinen','fact.disc.val':'K1 & Kajak-Cross',
+      'fact.training':'Trainingsort','fact.born':'Jahrgang',
+      'ach.h2':'Erfolge','ach.sub':'Upstream Gate · Resultate',
+      'r.3rd':'3. Platz','r.2nd':'2. Platz','r.vize':'Vizeschweizermeister',
+      'r.8th':'8. Platz','r.elitesel':'Qualifikation Eliteteam','r.1st':'1. Platz',
+      'r.2122':'21. & 22. Platz','r.19th':'19. Platz','r.15th':'15. Platz',
+      'r.5th':'5. Platz','r.hfquali':'Halbfinal-Quali','r.eurom':'Europameister',
+      'r.firstjwm':'Erste Junioren-WM-Teilnahme',
+      'e.swissm':'Schweizermeisterschaft · K1','e.u23wmkx':'U23-WM · Kajak-Cross',
+      'e.kxsel':'Kajak-Cross','e.wc12':'Weltcup #1 & #2 · Cross',
+      'e.u23wmk1':'U23-WM · K1','e.u23emkx':'Erste U23-EM · Kajak-Cross',
+      'e.swissmk1':'Schweizermeisterschaft · K1',
+      'e.firstwc':'Erste Weltcup-Teilnahme · K1',
+      'e.teamrun':'Team Abfahrt · Junioren-EM','e.jwmk1':'Junioren-WM · K1',
+      'team.h2':'Team Fehlmann','team.sub':'Downstream Gate · Gönnerclub',
+      'team.intro':'Als Teil von Team Fehlmann unterstützt du mich bei Trainings, Material und Wettkampfreisen – und wirst Teil einer Gemeinschaft, die meine Reise Richtung Olympia hautnah miterlebt. Beim Saison-Apéro triffst du die anderen Köpfe hinter Team Fehlmann – und bist von da an nicht mehr nur Zuschauer, sondern mittendrin.',
+      'event.label':'Kickoff Event · Team Fehlmann','event.title':'Gönnerclub-Apéro',
+      'event.meta':'14. Oktober · Bootshaus Solothurner Kajakfahrer','event.btn':'Jetzt anmelden',
+      'card.name':'Mitgliedschaft Team Fehlmann','card.period':'/ Saison',
+      'card.hint':'ab CHF 80 · frei wählbar',
+      'card.f1':'Einladung zum Saison-Apéro','card.f2':'Live-Infos vom Renngeschehen',
+      'card.f3':'Namentliche Erwähnung auf der Webseite',
+      'card.f4':'Teil der Gemeinschaft rund um Team Fehlmann',
+      'card.btn':'Jetzt Mitglied werden',
+      'tafel.title':'Gönnertafel','tafel.placeholder':'Hier könntest du stehen.',
+      'news.h2':'News','news.sub':'Downstream Gate · Aktuelles',
+      'news.date1':'August 2026','news.date2':'Juli 2026','news.date3':'Juni 2026',
+      'news.title1':'Doppelpodest am World Ranking Race Prag',
+      'news.text1':'Vom 14. bis 16. August ging in Prag-Troja der ICF Canoe Slalom World Ranking Race über die Bühne. Zwei Starts, zwei Podestplätze: Im Slalom erkämpfte ich mir den 3. Platz, im Kajak-Cross legte ich noch einen drauf und holte Rang 2. Ein starkes Wochenende auf einem der schnellsten Kanäle Europas — und ein optimaler Abschluss vor dem letzten Rennen der Saison: der Europameisterschaft Ende September in Ivrea.',
+      'news.title2':'8. Platz an der U23-WM in Krakau',
+      'news.text2':'Vom 30. Juni bis 5. Juli fanden in Krakau die ICF Junior & U23 Kanuslalom-Weltmeisterschaften statt — 445 Athleten aus 51 Nationen. Im K1 lief es nicht nach Plan — ein schwaches Rennen, das nicht meinem Niveau entsprach. Im Kajak-Cross kämpfte ich mich durch die K.o.-Runden bis in den Halbfinal und belegte am Ende den 8. Platz — ein gutes Resultat auf internationalem Niveau. Die Vorbereitung und der Fokus liegen jetzt auf der U23-EM in Epinal anfangs August.',
+      'news.title3':'Drei Weltcups — Tacen, Prag, Augsburg',
+      'news.text3':'Mit drei Weltcups in drei Wochen startete die Saison intensiv. In Tacen und Prag war ich im Kajak-Cross am Start und belegte den 21. und 22. Platz — solide Ergebnisse in einem starken internationalen Feld. In Augsburg stand nur K1 auf dem Programm: ein guter Lauf, der aber durch eine knappe 50-Sekunden-Strafe teuer bezahlt wurde und an einem deutlich besseren Resultat vorbeischrammte. Trotzdem wichtige Wettkampfkilometer gesammelt vor der U23-WM in Krakau.',
+      'contact.h2':'Kontakt','contact.sub':'Finish Gate · Anfragen',
+      'contact.text':'Für Medienanfragen, Sponsoring-Kooperationen oder sonstige Anliegen — meldet euch gerne direkt.',
+      'footer.supported':'Unterstützt von','footer.sport':'Kanuslalom · Schweiz',
+      'modal.h3':'Team Fehlmann beitreten',
+      'modal.p':'Füll das Formular aus — ich melde mich danach persönlich bei dir.',
+      'modal.name.label':'Name','modal.name.ph':'Vor- und Nachname',
+      'modal.email.label':'E-Mail','modal.email.ph':'deine@email.ch',
+      'modal.addr.label':'Adresse','modal.addr.ph':'Strasse, PLZ Ort',
+      'modal.msg.label':'Nachricht (optional)','modal.msg.ph':'Fragen oder Anmerkungen…',
+      'modal.anonym':'Ich möchte nicht namentlich auf der Gönnertafel erwähnt werden.',
+      'modal.submit':'Anmeldung absenden',
+      'modal.success.h3':'Danke für deine Anmeldung!',
+      'modal.success.p':'Ich freue mich und melde mich bald persönlich bei dir.',
+      'ev.modal.tier':'Kickoff · Team Fehlmann',
+      'ev.modal.h3':'Anmeldung Gönnerclub-Apéro',
+      'ev.modal.p':'Meld dich kurz an — ich freue mich auf euch!',
+      'ev.modal.persons.label':'Anzahl Personen',
+      'ev.modal.submit':'Anmelden',
+      'ev.modal.success.h3':'Anmeldung erhalten!',
+      'ev.modal.success.p':'Danke — bis bald am Apéro!'
+    },
+    en: {
+      'nav.about':'About','nav.results':'Results','nav.contact':'Contact',
+      'hero.eyebrow':'Canoe Slalom · Switzerland',
+      'hero.sub':'Canoe slalom athlete from Solothurn on the Swiss national team. Kayak and Kayak Cross — on the path to the next international successes.',
+      'hero.cta.primary':'View Results','hero.cta.ghost':'Get in Touch',
+      'hero.stat.k1':'World Ranking K1','hero.stat.kx':'World Ranking Kayak Cross',
+      'hero.stat.wc':'World Cup Starts','hero.stat.since':'National Team Since',
+      'hero.stand':'World Ranking as of June 2026 · ICF',
+      'about.h2':'About Me','about.sub':'Downstream Gate · Biography',
+      'about.p1':'I\'m Nicolas Fehlmann (born 2005), a canoe slalom athlete from Solothurn and part of the Swiss national team. I found my way into a kayak through a taster course at my local club — and after just a few runs, whitewater had me hooked. Since 2019 I\'ve been part of the national squad and now train in Basel.',
+      'about.p2':'What fascinates me about canoe slalom is the interplay with the water — not fighting the current, but working with it to find the fastest line through every wave. There\'s also the variety: from the technically precise Kayak Single (K1) to the head-to-head excitement of Kayak Cross. My long-term goal is clear — the Olympic Games.',
+      'fact.origin':'Origin','fact.disciplines':'Disciplines','fact.disc.val':'K1 & Kayak Cross',
+      'fact.training':'Training Base','fact.born':'Born',
+      'ach.h2':'Results','ach.sub':'Upstream Gate · Results',
+      'r.3rd':'3rd Place','r.2nd':'2nd Place','r.vize':'Swiss Vice-Champion',
+      'r.8th':'8th Place','r.elitesel':'Elite Team Selection','r.1st':'1st Place',
+      'r.2122':'21st & 22nd Place','r.19th':'19th Place','r.15th':'15th Place',
+      'r.5th':'5th Place','r.hfquali':'Semifinal Quali','r.eurom':'European Champion',
+      'r.firstjwm':'First Junior World Champs',
+      'e.swissm':'Swiss Championships · K1','e.u23wmkx':'U23 World Champs · Kayak Cross',
+      'e.kxsel':'Kayak Cross','e.wc12':'World Cup #1 & #2 · Cross',
+      'e.u23wmk1':'U23 World Champs · K1','e.u23emkx':'First U23 European Champs · Kayak Cross',
+      'e.swissmk1':'Swiss Championships · K1',
+      'e.firstwc':'First World Cup · K1',
+      'e.teamrun':'Team Downriver · Junior European Champs','e.jwmk1':'Junior World Champs · K1',
+      'team.h2':'Team Fehlmann','team.sub':'Downstream Gate · Supporters Club',
+      'team.intro':'As part of Team Fehlmann, you support me with training, equipment and race travel — and become part of a community that experiences my journey to the Olympics up close. At the season reception you\'ll meet the other faces behind Team Fehlmann — and from then on you\'re not just a spectator, but part of it.',
+      'event.label':'Kickoff Event · Team Fehlmann','event.title':'Supporters Club Reception',
+      'event.meta':'14 October · Bootshaus Solothurner Kajakfahrer','event.btn':'Register Now',
+      'card.name':'Team Fehlmann Membership','card.period':'/ Season',
+      'card.hint':'from CHF 80 · freely adjustable',
+      'card.f1':'Invitation to the season reception','card.f2':'Live updates from the race circuit',
+      'card.f3':'Name listed on the website',
+      'card.f4':'Part of the Team Fehlmann community',
+      'card.btn':'Become a Member',
+      'tafel.title':'Supporters Board','tafel.placeholder':'Your name could be here.',
+      'news.h2':'News','news.sub':'Downstream Gate · Latest',
+      'news.date1':'August 2026','news.date2':'July 2026','news.date3':'June 2026',
+      'news.title1':'Double Podium at World Ranking Race Prague',
+      'news.text1':'From 14 to 16 August, the ICF Canoe Slalom World Ranking Race took place at Prague-Troja. Two starts, two podium finishes: in Slalom I fought my way to 3rd place, and in Kayak Cross I went one better with 2nd place. A strong weekend on one of Europe\'s fastest courses — and the perfect send-off before the final race of the season: the European Championships at the end of September in Ivrea.',
+      'news.title2':'8th Place at the U23 World Championships in Krakow',
+      'news.text2':'From 30 June to 5 July, the ICF Junior & U23 Canoe Slalom World Championships took place in Krakow — 445 athletes from 51 nations. In K1 things didn\'t go to plan — a weak race that didn\'t reflect my level. In Kayak Cross I battled through the knockout rounds to the semifinal and finished 8th — a solid result at international level. Preparation and focus now shift to the U23 European Championships in Epinal at the start of August.',
+      'news.title3':'Three World Cups — Tacen, Prague, Augsburg',
+      'news.text3':'With three World Cups in three weeks, the season started at full intensity. In Tacen and Prague I competed in Kayak Cross, finishing 21st and 22nd — solid results in a strong international field. In Augsburg only K1 was on the programme: a good run that was unfortunately cut short by a narrow 50-second penalty, missing out on a much better result. Still, important race miles banked ahead of the U23 World Championships in Krakow.',
+      'contact.h2':'Contact','contact.sub':'Finish Gate · Enquiries',
+      'contact.text':'For media enquiries, sponsorship or other matters — feel free to get in touch directly.',
+      'footer.supported':'Supported by','footer.sport':'Canoe Slalom · Switzerland',
+      'modal.h3':'Join Team Fehlmann',
+      'modal.p':'Fill in the form — I\'ll get back to you personally.',
+      'modal.name.label':'Name','modal.name.ph':'First and last name',
+      'modal.email.label':'E-Mail','modal.email.ph':'your@email.com',
+      'modal.addr.label':'Address','modal.addr.ph':'Street, Postcode City',
+      'modal.msg.label':'Message (optional)','modal.msg.ph':'Questions or comments…',
+      'modal.anonym':'I do not wish to be listed by name on the supporters board.',
+      'modal.submit':'Submit',
+      'modal.success.h3':'Thank you for signing up!',
+      'modal.success.p':'Looking forward to it — I\'ll be in touch personally soon.',
+      'ev.modal.tier':'Kickoff · Team Fehlmann',
+      'ev.modal.h3':'Register for the Supporters Club Reception',
+      'ev.modal.p':'Sign up — looking forward to seeing you!',
+      'ev.modal.persons.label':'Number of people',
+      'ev.modal.submit':'Register',
+      'ev.modal.success.h3':'Registration received!',
+      'ev.modal.success.p':'Thanks — see you at the reception!'
+    }
+  };
+
+  // ── Language switcher ───────────────────────────────────────────────────
+  var lang = localStorage.getItem('nf-lang') || 'de';
+
+  function applyLang(l) {
+    lang = l;
+    localStorage.setItem('nf-lang', l);
+    document.documentElement.lang = l;
+    document.getElementById('langToggle').textContent = l === 'de' ? 'EN' : 'DE';
+    document.title = l === 'de' ? 'Nicolas Fehlmann — Kanuslalom' : 'Nicolas Fehlmann — Canoe Slalom';
+    var dict = T[l];
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var v = dict[el.dataset.i18n];
+      if (v !== undefined) el.textContent = v;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el) {
+      var v = dict[el.dataset.i18nPh];
+      if (v !== undefined) el.placeholder = v;
+    });
+  }
+
+  document.getElementById('langToggle').addEventListener('click', function() {
+    applyLang(lang === 'de' ? 'en' : 'de');
+  });
+
+  applyLang(lang);
+
+  // ── Hero slider ─────────────────────────────────────────────────────────
   var slides = document.querySelectorAll('.hero-slide');
   var dots = document.querySelectorAll('.slider-dot');
   var current = 0;
@@ -744,20 +890,18 @@
   document.querySelector('.hero-slider').style.cursor = 'pointer';
   setInterval(function(){ go(current + 1); }, 5000);
 
-  // Gönner-Modal
+  // ── Gönner-Modal ────────────────────────────────────────────────────────
   var modal = document.getElementById('gonnerModal');
   var modalTier = document.getElementById('modalTier');
   var formTier = document.getElementById('formTier');
-  var tierLabels = {starttor:'Starttor',aufwärtstor:'Aufwärtstor',wendetor:'Aufwärtstor',zieltor:'Zieltor'};
   document.querySelectorAll('[data-tier]').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.preventDefault();
       var t = this.dataset.tier;
-      var label = tierLabels[t] || t;
       var amountInput = this.closest('.team-card') && this.closest('.team-card').querySelector('.team-card-input');
       var amount = amountInput && amountInput.value ? 'CHF ' + amountInput.value : '';
-      modalTier.textContent = label + (amount ? ' · ' + amount : '');
-      formTier.value = label + (amount ? ' · ' + amount : '');
+      modalTier.textContent = t + (amount ? ' · ' + amount : '');
+      formTier.value = t + (amount ? ' · ' + amount : '');
       document.getElementById('modalForm').style.display = '';
       document.getElementById('modalSuccess').style.display = 'none';
       modal.classList.add('open');
@@ -777,7 +921,8 @@
         }
       });
   });
-  // Event-Modal
+
+  // ── Event-Modal ─────────────────────────────────────────────────────────
   var eventModal = document.getElementById('eventModal');
   document.getElementById('eventAnmelden').addEventListener('click', function(e){
     e.preventDefault();
